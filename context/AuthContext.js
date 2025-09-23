@@ -4,7 +4,7 @@ import React, { useReducer } from "react";
 export const AuthContext = React.createContext();
 
 const initialState = {
-  isAuthenticated: false,
+  isAuthenticated: true,
 };
 
 const reducer = (state, action) => {

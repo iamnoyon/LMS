@@ -4,6 +4,7 @@ import React, { useContext } from 'react'
 import AuthWatcher from './AuthWatcher'
 import { AuthContext } from '@/context/AuthContext'
 import { useRouter } from 'next/navigation';
+import theme from '@/theme';
 
 const AdminThemeProvider = ({ children }) => {
     const router = useRouter()
@@ -14,7 +15,7 @@ const AdminThemeProvider = ({ children }) => {
         return null; // Prevent rendering while redirecting
     }
     return (
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
             <AuthWatcher>
                 {children}
             </AuthWatcher>

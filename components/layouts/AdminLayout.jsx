@@ -1,17 +1,27 @@
 "use client"
 import { Box, Divider, Icon, Text } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaAngleDoubleLeft } from "react-icons/fa";
 import { LuMenu } from "react-icons/lu";
 import Profile from '../modules/Dashboard/profile/Profile';
 import Sidebar from './Sidebar';
+import Loader from '../common/Loader/Loader';
+import { usePathname } from 'next/navigation';
 
 const AdminLayout = ({ children }) => {
+    const pathname = usePathname()
     const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
     const handleCollapseSidebar = () => {
         setIsSidebarCollapsed(!isSidebarCollapsed)
     }
+    useEffect(() => {
+        setIsLoading(true)
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 500);
+    }, [pathname])
     return (
         <Box>
             <Box
@@ -70,7 +80,9 @@ const AdminLayout = ({ children }) => {
                 <Box
                     m={4}
                 >
-                    {children}
+                    {
+                        isLoading ? <Loader /> : children
+                    }
                 </Box>
             </Box>
         </Box>

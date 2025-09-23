@@ -70,7 +70,7 @@ const Sidebar = ({ isCollapsed }) => {
                                         <Box
                                             color={inactiveColor}
                                             _groupHover={{ color: activeColor }}
-                                            opacity={isCollapsed ? 0 : 1}
+                                            opacity={1}
                                             transition="opacity 0.3s ease-in-out"
                                         >
                                             {openMenu === item.name ? (

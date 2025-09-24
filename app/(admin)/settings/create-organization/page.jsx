@@ -1,11 +1,11 @@
 import Loader from '@/components/common/Loader/Loader'
-import ProfileDetails from '@/components/modules/Dashboard/profile/ProfileDetails'
+import CreateOraganization from '@/components/modules/organization/CreateOraganization'
 import React, { Suspense } from 'react'
 
 const page = () => {
     return (
         <Suspense fallback={<Loader />}>
-            <ProfileDetails />
+            <CreateOraganization />
         </Suspense>
     )
 }

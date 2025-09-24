@@ -33,6 +33,7 @@ const AdminLayout = ({ children }) => {
                 left={0}
                 bottom={0}
                 transition='width 0.3s ease-in-out'
+                overflowX="scroll"
             >
                 <Box
                     h='60px'
@@ -73,7 +74,7 @@ const AdminLayout = ({ children }) => {
                     justifyContent='space-between'
                 >
                     <button onClick={handleCollapseSidebar}>
-                        <Icon as={isSidebarCollapsed ? LuMenu : FaAngleDoubleLeft} fontSize={isSidebarCollapsed ? '24px' : '18px'} />
+                        <Icon title={isSidebarCollapsed ? 'Expend': 'Collapse'} as={isSidebarCollapsed ? LuMenu : FaAngleDoubleLeft} fontSize={isSidebarCollapsed ? '24px' : '18px'} />
                     </button>
                     <Profile />
                 </Box>

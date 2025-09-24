@@ -1,8 +1,12 @@
-import React from 'react'
+import Loader from '@/components/common/Loader/Loader'
+import Dashboard from '@/components/modules/Dashboard/Dashboard'
+import React, { Suspense } from 'react'
 
 const page = () => {
     return (
-        <div>Dashboard</div>
+        <Suspense fallback={<Loader />}>
+            <Dashboard />
+        </Suspense>
     )
 }
 

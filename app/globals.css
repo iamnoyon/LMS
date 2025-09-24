@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+#staticSearch {
+  padding: 5px 7px;
+}
+

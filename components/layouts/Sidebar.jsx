@@ -17,13 +17,13 @@ const Sidebar = ({ isCollapsed }) => {
 
     return (
         <Box mt={5} display="flex" flexDirection="column" gap={1}>
-            {menuItems.map((item) => {
+            {menuItems.map((item, index) => {
                 const isActive = pathname === item.path
                 const activeColor = "pink.700"
                 const inactiveColor = "white"
 
                 return (
-                    <Box key={item.name}>
+                    <Box key={index}>
                         {/* Parent Item */}
                         <Tooltip label={item.name} placement="top" hasArrow borderRadius={5}>
                             <NextLink href={item.path} passHref>
@@ -88,10 +88,10 @@ const Sidebar = ({ isCollapsed }) => {
                         {item.children && (
                             <Collapse in={openMenu === item.name} animateOpacity>
                                 <Box mx={5} display="flex" flexDirection="column" gap={1} mt={1}>
-                                    {item.children.map((child) => {
+                                    {item.children.map((child, index) => {
                                         const childActive = pathname === child.path
                                         return (
-                                            <Tooltip label={child.name} key={child.name} placement="top" hasArrow borderRadius={5}>
+                                            <Tooltip label={child.name} key={child.name+child.index} placement="top" hasArrow borderRadius={5}>
                                                 <NextLink href={child.path} passHref>
                                                     <Box
                                                         role="group"
